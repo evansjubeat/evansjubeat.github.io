@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+    <script defer src="js/functions.js"></script>
+	<script defer src="js/AudioScript.js"></script>
+	<style>
+	body{
+		background-color:
+	}
+	</style>
+</head>
+
+<body>
+<div id = "background">&nbsp</div>
+<div class="loader"></div>
+<h1> Lightales</h1>
+<!--<a href="Introduction.html">Click here to read description</a> -->
+<div class="filebox bs3-primary preview-image">
+	<input class="upload-name" value="Load your background music" disabled="disabled" style="width: 180px;" id="fileName">
+	<input id="fileChooseInput" type="file" class="upload-hidden" style="display: none;">
+	<button class="button input" onclick="document.getElementById('fileChooseInput').click();">Load</button>
+	<button class="button musicplay" onclick="playSound(myAudioBuffer)">Play</button>
+	<button class="button musicstop" onclick="stopSound()">Stop</button>
+	<p class="player">
+  <span id="playtoggle" />
+  <span id="gutter">
+    <span id="loading" />
+    <span id="handle" class="ui-slider-handle" />
+  </span>
+  <span id="timeleft" />
+</p>
+</div>
+<br>
+
+<script>
+	// Ctrl + f
+	var i = 0;
+	var t = 0;
+
+	function change(){
+		var color = ["black", "blue", "brown", "green"];
+		document.body.style.backgroundColor = color[i];
+		i = (i+1)%color.length;
+	}
+		setInterval(change, audio);
+	
+
+</script>
+
+<h1 id ="CurKey"><h1>
+</body>
+
+</html>

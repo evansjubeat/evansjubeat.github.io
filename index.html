@@ -7,7 +7,7 @@
 	<style>
 	body{
 		background-color: #111111;
-        background: red;
+        background: white;
 	    -webkit-transition: all 1s ease-in-out;
 	    -moz-transition: all 1s ease-in-out;
 	    -o-transition: all 1s ease-in-out;
@@ -28,7 +28,7 @@
 	<input class="upload-name" value="Load your background music" disabled="disabled" style="width: 180px;" id="fileName">
 	<input id="fileChooseInput" type="file" class="upload-hidden" style="display: none;">
 	<button class="button input" onclick="document.getElementById('fileChooseInput').click();">Load</button>
-	<button class="button musicplay" onclick="playSound(myAudioBuffer)">Play</button>
+	<button class="button musicplay" onclick="playSound(myAudioBuffer);changelist();">Play</button>
 	<button class="button musicstop" onclick="stopSound()">Stop</button>
 	<p class="player">
   <span id="playtoggle" />
@@ -51,7 +51,11 @@
 		document.body.style.backgroundColor = color[i];
 		i = (i+1)%color.length;
 	}
-	setInterval(change, 10000);
+	function changelist(){
+		setTimeout(change, 2000);
+		setTimeout(change, 4000);
+	}
+
 	
 
 </script>

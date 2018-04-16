@@ -6,7 +6,15 @@
 	<script defer src="js/AudioScript.js"></script>
 	<style>
 	body{
-		background-color:
+		background-color: #111111;
+        background: red;
+	    -webkit-transition: all 1s ease-in-out;
+	    -moz-transition: all 1s ease-in-out;
+	    -o-transition: all 1s ease-in-out;
+	    -ms-transition: all 1s ease-in-out;
+	    transition: all 1s ease-in-out;
+
+    
 	}
 	</style>
 </head>
@@ -43,7 +51,7 @@
 		document.body.style.backgroundColor = color[i];
 		i = (i+1)%color.length;
 	}
-		setInterval(change, audio);
+	setInterval(change, 10000);
 	
 
 </script>

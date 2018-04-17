@@ -8,11 +8,11 @@
 	body{
 		background-color: #111111;
         background: white;
-	    -webkit-transition: all 2s ease-in-out;
-	    -moz-transition: all 2s ease-in-out;
-	    -o-transition: all 2s ease-in-out;
-	    -ms-transition: all 2s ease-in-out;
-	    transition: all 2s ease-in-out;
+	    -webkit-transition: all 2s linear;
+	    -moz-transition: all 2s linear;
+	    -o-transition: all 2s linear;
+	    -ms-transition: all 2s linear;
+	    transition: all 2s linear;
 
     
 	}
@@ -28,7 +28,7 @@
 	<input class="upload-name" value="Load your background music" disabled="disabled" style="width: 180px;" id="fileName">
 	<input id="fileChooseInput" type="file" class="upload-hidden" style="display: none;">
 	<button class="button input" onclick="document.getElementById('fileChooseInput').click();">Load</button>
-	<button class="button musicplay" onclick="playSound(myAudioBuffer);changelist();">Play</button>
+	<button class="button musicplay" onclick="playSound(myAudioBuffer);readBook();">Play</button>
 	<button class="button musicstop" onclick="stopSound()">Stop</button>
 	<p class="player">
   <span id="playtoggle" />
@@ -45,19 +45,30 @@
 	// Ctrl + f
 	var i = 0;
 	var t = 0;
-	var audiotitle = document.getElementById("fileName").value
-
 	function readBook(){
+		var audiotitle = document.getElementById("fileName").value;
 
+		console.log("reading start!");
+		if (audiotitle == "Princess_and_Pea.mp3")
+			changelist([0,4,29,41,62,81,87,103,112,115,122,129]);
+		if (audiotitle == "Frog_Prince.mp3")
+			changelist([0, 26,60,69,79,95,113,120,131,146,184,204,224,230,245,263,275,293,314,350,367,381,400,413,423]);
 	}
-	function change(){
-		var color = ["red", "gray", "red", "red", "purple", "purple", "green", "red", "black", "green","black"];
+	function change(color){
+		var audiotitle = document.getElementById("fileName").value;
+
+		console.log("color!");
+		if (audiotitle == "Princess_and_Pea.mp3")
+			var color = ["red", "white","gray", "red", "red", "purple", "purple", "green", "red", "black", "green","black"];
+		if (audiotitle == "Frog_Prince.mp3")
+			var color = ["orange","white","gray","white","blue","purple","blue","black","red","black","blue","black","white","green","red","white","red","red","black","orange","white","red","purple","red","black"];
+		
 		document.body.style.backgroundColor = color[i];
 		i = (i+1)%color.length;
 	}
-	function changelist(){
+	function changelist(chap){
+		console.log("change!");
 		document.body.style.backgroundColor = "red";
-		chap = [0, 29,41,62,81,87,103,112,115,122,129];
 		for( n = 0; n < chap.length; n++)
 		{
 			setTimeout(change, chap[n]*1000)

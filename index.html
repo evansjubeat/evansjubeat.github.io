@@ -47,14 +47,21 @@
 	var t = 0;
 	var audiotitle = document.getElementById("fileName").value
 
+	function readBook(){
+
+	}
 	function change(){
-		var color = ['#393939', "blue", "brown", "green"];
+		var color = ["red", "white", "gray", "red", "red", "purple", "purple", "green", "red", "black", "green","black"];
 		document.body.style.backgroundColor = color[i];
 		i = (i+1)%color.length;
 	}
 	function changelist(){
-		setTimeout(change, 2000);
-		setTimeout(change, 4000);
+		document.body.style.backgroundColor = "red";
+		chap = [0, 5, 29,41,62,81,87,103,112,115,122,129];
+		for( n = 0; n < chap.length; n++)
+		{
+			setTimeout(change, chap[n]*1000)
+		}
 	}
 	
 

@@ -45,9 +45,10 @@
 	// Ctrl + f
 	var i = 0;
 	var t = 0;
+	var audiotitle = document.getElementById("fileName").value
 
 	function change(){
-		var color = ["black", "blue", "brown", "green"];
+		var color = ['#393939', "blue", "brown", "green"];
 		document.body.style.backgroundColor = color[i];
 		i = (i+1)%color.length;
 	}
@@ -55,7 +56,6 @@
 		setTimeout(change, 2000);
 		setTimeout(change, 4000);
 	}
-
 	
 
 </script>

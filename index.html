@@ -8,11 +8,11 @@
 	body{
 		background-color: #111111;
         background: white;
-	    -webkit-transition: all 1s ease-in-out;
-	    -moz-transition: all 1s ease-in-out;
-	    -o-transition: all 1s ease-in-out;
-	    -ms-transition: all 1s ease-in-out;
-	    transition: all 1s ease-in-out;
+	    -webkit-transition: all 2s ease-in-out;
+	    -moz-transition: all 2s ease-in-out;
+	    -o-transition: all 2s ease-in-out;
+	    -ms-transition: all 2s ease-in-out;
+	    transition: all 2s ease-in-out;
 
     
 	}
@@ -51,13 +51,13 @@
 
 	}
 	function change(){
-		var color = ["red", "white", "gray", "red", "red", "purple", "purple", "green", "red", "black", "green","black"];
+		var color = ["red", "gray", "red", "red", "purple", "purple", "green", "red", "black", "green","black"];
 		document.body.style.backgroundColor = color[i];
 		i = (i+1)%color.length;
 	}
 	function changelist(){
 		document.body.style.backgroundColor = "red";
-		chap = [0, 5, 29,41,62,81,87,103,112,115,122,129];
+		chap = [0, 29,41,62,81,87,103,112,115,122,129];
 		for( n = 0; n < chap.length; n++)
 		{
 			setTimeout(change, chap[n]*1000)

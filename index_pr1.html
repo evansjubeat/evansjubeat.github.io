@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+    <script defer src="js/functions.js"></script>
+	<script defer src="js/AudioScript.js"></script>
+	<style>
+	body{
+		background-color: #111111;
+        background: white;
+	    -webkit-transition: all 2s linear;
+	    -moz-transition: all 2s linear;
+	    -o-transition: all 2s linear;
+	    -ms-transition: all 2s linear;
+	    transition: all 2s linear;
+
+    
+	}
+	@font-face {
+		font-family: "NanumSquareB";
+		src: url("css/NanumSquareB.ttf");
+	}
+	</style>
+</head>
+
+<body>
+<div id = "background">&nbsp</div>
+<div class="loader"></div>
+<h1 style="text-align: center"><font face = "NanumSquareB"> Lightales</font></h1>
+<!--<a href="Introduction.html">Click here to read description</a> -->
+<div class="filebox bs3-primary preview-image" align="center">
+	<input class="upload-name" value="Load your story to feel" disabled="disabled" style="width: 180px;" id="fileName">
+	<input id="fileChooseInput" type="file" class="upload-hidden" style="display: none;">
+	<button class="button input" onclick="document.getElementById('fileChooseInput').click();">Load</button>
+	<button class="button musicplay" onclick="playSound(myAudioBuffer);readBook();">Play</button>
+	<button class="button musicstop" onclick="stopSound()">Stop</button>
+</div>
+<br>
+
+<script>
+	// Ctrl + f
+	var i = 0;
+	var t = 0;
+	function readBook(){
+		var audiotitle = document.getElementById("fileName").value;
+
+		console.log("reading start!");
+		if (audiotitle == "Princess_and_Pea.mp3")
+			changelist([0,29,41,62,81,87,103,112,115,122,129]);
+		if (audiotitle == "Frog_Prince.mp3")
+			changelist([0, 26,60,69,79,95,113,120,131,146,184,204,224,230,245,263,275,293,314,350,367,381,400,413,423]);
+		if (audiotitle == "match_seller.mp3")
+			changelist([0, 52, 79, 124,138, 174, 213, 241, 267]);
+		if (audiotitle == "Rapunzel.mp3")
+			changelist([0, 8, 31, 48, 54, 64, 75, 98, 115,126,143,166,169,177,198,200,202,221,256,263,273,283,288,327,344,367,379,402,416,430,446,460,507]);
+		if (audiotitle == "Red_riding_hood.mp3")
+			changelist([0, 23,62,77,114,152,188,206,223,236,266,270,275,279,282,285,287,292,294,309,347,382,407,438,444,475,516]);
+		if (audiotitle == "ugly_duck.mp3")
+			changelist([0, 25,46,82,94,99,116,142,164,199,234,252,268,279,294,320]);
+	}
+	function change(color){
+		var audiotitle = document.getElementById("fileName").value;
+		var colorcode = ["black", "gray","black","white","purple","red","orange","blue","yellow","green","green"];
+	
+		console.log("color!");
+		if (audiotitle == "Princess_and_Pea.mp3")
+			var color = [5,1,5,5,4,4,10,5,2,9];
+		if (audiotitle == "Frog_Prince.mp3")
+			var color = [6,3,1,3,7,4,7,2,5,2,7,2,3,10,5,4,5,5,2,6,3,5,4,5];
+		if (audiotitle == "match_seller.mp3")
+			var color = [1,4,5,1,6,4,7,10];
+		if (audiotitle == "Rapunzel.mp3")
+			var color = [7,8,8,10,7,6,7,4,6,6,9,1,6,5,7,4,5,7,5,6,8,7,6,5,5,6,6,3,5];
+		if (audiotitle == "Red_riding_hood.mp3")
+			var color = [3,3,1,3,3,4,2,3,2,4,6,5,6,7,5,10,2,9,1,1,2,3,2,1,1,2];
+		if (audiotitle == "ugly_duck.mp3")
+			var color = [4,4,5,1,10,5,2,4,5,6,7,4,6,5,8];		
+		document.body.style.backgroundColor = colorcode[color[i]];
+		i = (i+1)%color.length;
+	}
+	function changelist(chap){
+		console.log("change!");
+		document.body.style.backgroundColor = "red";
+		for( n = 0; n < chap.length; n++)
+		{
+			setTimeout(change, chap[n]*1000)
+		}
+	}
+	
+
+</script>
+
+<h1 id ="CurKey"><h1>
+</body>
+
+</html>
